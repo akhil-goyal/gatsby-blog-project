@@ -1,0 +1,521 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:900,900i|Open+Sans:600,700,800|Lato:400,700|IBM+Plex+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+/* reset */
+button, input, textarea {
+  font: inherit;
+  padding: 0 0.25em;
+  color: inherit;
+  background-color: inherit;
+  /*   vertical-align: ???; */
+}
+button:hover {
+  cursor: pointer;
+}
+
+
+
+
+
+:root {
+  --ffam-serif-a: 'Lato', sans-serif;
+  --ffam-serif-b: 'Lato', sans-serif;
+  --ffam-sans-a: 'Lato', sans-serif;
+  --txt-line: 1.4;
+  --txt-vrt: 2rem;
+  --txt-hrz: 1rem;
+  --h-line: 0.9;
+  --h-margin: calc(var(--txt-line) / var(--h-line) * 1rem);
+  --corners: calc(var(--txt-vrt) / 8);
+  
+/*   --col-accent: rgb(66, 134, 244); */
+  
+  /* DARK */
+/*   --col-bg: #222222;
+  --col-txt: #F1F1F1;
+  --col-accent: #D31152;
+  --col-accent-alt: #e8618e;
+  --col-accent-inv: #fff; */
+  
+  /* LIGHT */
+  
+
+  
+  /* rgb(170, 66, 244) == hsl(275%, 89%, 61%); */
+/*   --col-accent: rgb(170, 66, 244);
+  --col-accent-alt: rgb(198, 171, 252);
+  --col-accent-lighter: rgb(233, 222, 252);
+  --col-accent-dark: #583373;
+  
+  --col-accent-inv: rgb(0, 0, 0);
+  --col-accent-trans: rgba(170, 66, 244, 0.4);
+  
+  --col-bg: #ffffff;
+  --col-txt: #222222; */
+  
+  
+  --col-back: #ffffff;
+  --col-fore: #000000;
+  
+  --a-h: 152;
+  --b-h: 290;
+  
+  --opaque: 1;
+  --lucent: 0.5;
+  --trans: 0.25;
+  
+  --lighter: 90%;
+  --light: 75%;
+  --mid: 60%;
+  --dark: 50%;
+  --darker: 50%;
+  
+  --col-a-lighter: hsla(var(--a-h), 100%, var(--lighter), var(--opaque));
+  --col-a-light: hsla(var(--a-h), 100%, var(--light), var(--opaque));
+  --col-a: hsla(var(--a-h), 100%, var(--mid), var(--opaque));
+  --col-a-dark: hsla(var(--a-h), 95%, var(--dark), var(--opaque));
+  --col-a-darker: hsla(var(--a-h), 70%, var(--darker), var(--opaque));
+  
+  --col-b: hsla(var(--a-h), 20%, 20%, var(--opaque));
+}
+
+/* LIST
+- Content:
+
+
+*/
+
+* {
+  transition: all 100ms;
+}
+/* Move font-size up to html? Would have to adjust all rem values back down though */
+body {
+  margin: 0;
+  font: 400 1em var(--ffam-serif-a);
+  line-height: 1;
+  background-color: var(--col-back);
+  color: var(--col-fore);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900;
+  font-family: var(--ffam-sans-a);
+  line-height: var(--h-line);
+  margin: var(--h-margin) 0;
+  /* position: relative; */
+}
+
+h1, h2 {
+  font-family: var(--ffam-serif-b);
+  /* font-style: italic; */
+}
+h1 { 
+  font-size: 2em; 
+  /* line-height: 0.85; */
+  margin-right: calc(var(--txt-hrz) * 6);
+}
+h1 > a {
+  font-family: inherit;
+}
+h1 > a:hover {
+  background-color: hsla(var(--a-h), 100%, var(--mid), var(--lucent));
+  box-shadow: none;
+}
+.category + h1 {
+  margin-top: calc(var(--h-margin) / 1.5);
+}
+
+h2 { 
+  font-size: 1.5em; 
+  /* position: relative; */
+}
+/* h2:after {
+  content: " \221E";
+  transform: rotate(-45deg);
+  display: inline-block;
+  color: var(--col-accent);
+  text-shadow: -0.1rem 0.2rem 0 var(--col-a-light);
+  opacity: 0;
+  cursor: pointer;
+} */
+/* h2:hover:after {
+  opacity: 1;
+} */
+h3 {
+  font-size: 1em;
+  text-transform: uppercase;
+}
+h4 {
+  font-size: 0.9em;
+  background-color: var(--col-a-lighter);
+  line-height: var(--txt-vrt);  /* revisit this!! */
+}
+
+
+/* This will be used to represent that heading in a side nav slider ("scrollspy"). Probably more likely to use multuple colours, or perhaps symbols/characters. Could also used width to demonstrate weight, */
+/* h1:before, h2:before, h3:before  {
+  content: "";
+  position: absolute;
+  width: 1em;
+  height: 0.125em;
+  background-color: var(--col-a);
+  bottom: -0.25em;
+  left: 0;
+  z-index: -1;  
+} */
+
+
+/* h2:before {
+  content: "";
+  border-top: 0.125em solid var(--col-accent);
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: 0.2rem 0.2rem 0 var(--col-accent-alt);
+} */
+
+p {
+  margin: var(--txt-vrt) 0;
+  line-height: var(--txt-line);
+  text-align: justify;
+}
+a {
+  color: inherit; /* this needs a colour */
+  font-family: var(--ffam-sans-a);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.95em;
+  /* box-shadow: 0.2rem 0.2rem 0 transparent; */
+  
+}
+a:hover {
+  background-color: var(--col-a);
+  /* box-shadow: 0.2rem 0.2rem 0 var(--col-a-darker);   */
+}
+
+code, pre {
+  background-color: var(--col-a);
+  color: var(--col-b);
+  border-radius: var(--corners);
+  /* box-shadow: 0.25rem 0.25rem 0 var(--col-a-darker); */
+}
+code { 
+  padding: calc(var(--txt-vrt) / 20) calc(var(--txt-vrt) / 6); 
+}
+pre { 
+  padding: calc(var(--txt-vrt) / 1.5); 
+  overflow-x: scroll;
+}
+pre::-webkit-scrollbar { 
+    display: none; 
+}
+kbd {
+  color: var(--col-b);
+  box-sizing: border-box;
+  background-color: var(--col-a-light);
+  border: 4px outset var(--col-a);
+  border-radius: var(--corners);
+  /* position: relative; */
+  padding: 0 calc(var(--txt-vrt) / 10);  
+}
+kbd + kbd {
+  margin-left: 1.5ch;
+  /*  3 char width   */
+}
+/* kbd + kbd:before {
+  content: "+";
+  position: absolute;
+  opacity: 0.5;
+  left: -1.66ch;
+  top: 0;
+} */
+abbr {
+  text-decoration: none;
+  padding: 0 calc(var(--txt-vrt) / 10); 
+  background-color: var(--col-a-lighter);
+}
+abbr:hover {
+  border-color: var(--col-a);
+  cursor: help;
+}
+
+/* https://freefrontend.com/assets/img/css-quote-styles/Quote-Jared-Spool-HTML-CSS.png */
+blockquote {
+  /* margin: calc(var(--txt-vrt)) 0; */
+  font-size: 1.25em;
+  font-style: italic;
+  font-weight: 900;
+  font-family: var(--ffam-sans-a);
+  /* line-height: 1; */
+  /* padding-left: calc(var(--txt-vrt) * 3); */
+  padding-right: calc(var(--txt-vrt) * 1);
+  text-align: left;
+  padding-top: calc(var(--txt-vrt) * 1);
+  /* position: relative; */
+/*   background-color: var(--col-accent-alt); */
+/*   border-bottom: 0.175em solid var(--col-accent); */
+/*   box-shadow: 0.2rem 0.2rem 0 var(--col-accent-alt); */
+}
+blockquote { margin-top: calc(var(--txt-vrt) * 1); }
+blockquote + * { 
+  padding-top: calc(var(--txt-vrt) * 1);
+   /* position: relative;  */
+  }
+/* blockquote:before, blockquote + *:before { 
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-top: 0.175rem solid var(--col-a-light); */
+  /* box-shadow: 0.2rem 0.2rem 0 var(--col-a-lighter); */
+/* } */
+/* blockquote:after {
+  content: "\275E"; */
+/*   content: open-quote; */
+  /* position: absolute;
+  display: inline-block;
+  color: var(--col-a);
+  top: -0.35em;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 1em;
+  height: 0.7em;
+  padding-right: 0.2em;
+  background-color: var(--col-back);
+  text-align: center;
+  font-size: 1.5em;
+  font-family: var(--ffam-serif-b);
+  text-shadow: 0.125rem 0.125rem 0 var(--col-a-lighter);
+} */
+blockquote p {
+  text-align: left;
+  line-height: 1em;
+}
+blockquote > p:first-of-type {
+  margin-top: 0;
+}
+/* blockquote > p:first-of-type:before { */
+/*   content:"\""; */
+/* } */
+/* blockquote > p:last-of-type:after {
+
+} */
+
+blockquote > p:first-of-type::first-letter {
+/*   font-size: xx-large; */
+  font-size: 2em;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  /* text-shadow: 0.125rem 0.125rem 0 var(--col-a); */
+  text-transform: uppercase;
+
+/*   text-shadow: 0.075rem 0.075rem 0 var(--col-accent-alt); */
+  
+/*   font-family: 'Playfair Display'; */
+}
+
+q {
+  
+}
+/* content: open-quote;
+content: close-quote; */
+
+figure {
+  margin: 0;
+}
+img {
+  max-width: 100%;
+  /* box-shadow: 0.2rem 0.2rem 0 var(--col-a-light); */
+}
+figcaption, cite {
+  display: inline-block;
+}
+figcaption {
+  font: 700 0.95em var(--ffam-sans-a);
+}
+cite {
+  font-size: 0.75em;
+}
+/* cite:before {
+  content: "| ";
+  vertical-align: top;
+  line-height: 0.75;
+} */
+
+.lead {
+  
+}
+
+.byline {
+  
+}
+
+
+
+input, textarea {
+  
+}
+  :hover {
+
+  }
+  :focus {
+
+  }
+  :disabled {
+
+  }
+  .error {
+
+  }
+button {
+  padding: 0.25em 0.5em;
+  background-color: transparent;
+  border-radius: var(--corners);
+  border: 0.175em solid var(--col-a-light);
+  /* box-shadow: 0.2rem 0.2rem 0 var(--col-a); */
+  font-family: var(--ffam-sans-a);
+  text-transform: uppercase;
+}
+  :disabled {
+
+  }
+
+  button:hover {
+    background-color: var(--col-a-light);
+/*     box-shadow: 0.2rem 0.2rem 0 var(--col-a-dark); */
+    cursor: pointer;
+  }
+  .action {
+
+  }
+  button.action {
+    background-color: var(--col-a-light);
+  }
+  button.action:hover {
+    background-color: var(--col-a);
+  }
+
+
+
+
+.site-header {
+  margin-bottom: calc(var(--txt-vrt) * 2);
+  background-color: #140352;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.site-footer {
+  /*   background-color: var(--col-accent); */
+  color: var(--col-b);
+  padding: calc(var(--txt-vrt) * 2) 0;
+  margin-top: calc(var(--txt-vrt) * 3);
+  background-color: #140352;
+  text-align: center;
+  color: #fff;
+  /* position: relative; */
+  /* overflow: hidden; */
+  /* z-index: 0; */
+  /* min-height: 10em; */
+}
+  
+.logo {
+  font: 500 3em 'Lato', sans-serif;
+  text-transform: uppercase;
+  /* letter-spacing: -0.1em; */
+  /* line-height: 0.45; */
+  /* border-bottom: 0.15em solid var(--col-a); */
+  /* margin: 0.5em 0; */
+  /* padding-left: 0.08em; */
+  color: #fff;
+}
+
+.site-header p {
+  color: #fff;
+  font: 400 1em 'Lato', sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 60em;
+  margin: auto;
+}
+
+.published, .category {
+  font: 800 0.666em 'Lato', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+}
+.published {
+  margin-top: var(--txt-vrt);
+}
+.published + .published {
+  margin-top: 0;
+}
+.category {
+  background-color: var(--col-a);
+  display: inline-block;
+  padding: 0.25em;
+  font-size: 0.5em;
+}
+
+/* Inspiration: https://www.gq.com/about/suits */
+.index-story {
+  display: grid;
+  grid-template-columns: auto 25em;
+  grid-template-areas: "summary img";
+  grid-gap: 2em;
+  align-items: center;
+  border-bottom: 2px solid lightgrey;
+  padding: 2em 0;
+}
+.index-story:nth-child(even) {
+  grid-template-columns: 25em auto;
+  grid-template-areas: "img summary";
+}
+
+.index-story-summary {
+  grid-area: summary;
+}
+.index-story-img {
+  grid-area: img;
+  align-self: end;
+}
+
+h1 {
+  margin-right: 0;
+}
+.story-header {
+  margin-bottom: 3rem;
+}
+
+.story-body > p:first-of-type {
+  text-indent: 1em;
+}
+/* .story-body > p:last-of-type:after {
+  content: " \2726";
+  font-size: 0.75em;
+  vertical-align: middle;
+  text-indent: 1em;
+  color: var(--col-a-light);
+  text-shadow: 0.125rem 0.125rem 0 var(--col-a-dark);
+} */
+
+
+
+
+/* Put theses sizes in variables */
+@media screen and (min-width: 30em) {
+  body {
+    font-size: 1.20em;
+  }
+}
+@media screen and (min-width: 60em) {
+  body {
+    font-size: 1.33em;
+  }
+}
