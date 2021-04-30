@@ -505,6 +505,10 @@ button {
   align-self: end;
 }
 
+.share-buttons > * {
+  margin: 1em 0.5em;
+}
+
 h1 {
   margin-right: 0;
 }

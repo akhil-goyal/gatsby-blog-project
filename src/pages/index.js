@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby";
 import Img from 'gatsby-image';
-import { Badge } from 'reactstrap';
+
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -39,6 +39,10 @@ const BlogIndex = ({ data, location }) => {
               itemType="http://schema.org/Article"
               key={post.fields.slug}
             >
+              <section>
+                <Img fluid={post.frontmatter.image.childImageSharp.fluid} alt="Post Image" />
+              </section>
+
               <header className="index-story-summary">
                 {/* <div class="category">Category</div> */}
                 <h1>
@@ -62,9 +66,7 @@ const BlogIndex = ({ data, location }) => {
                 </div>
 
               </header>
-              <section>
-                <Img fluid={post.frontmatter.image.childImageSharp.fluid} alt="Post Image" />
-              </section>
+
             </article>
           )
         })}
