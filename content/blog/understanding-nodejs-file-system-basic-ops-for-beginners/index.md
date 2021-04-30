@@ -3,6 +3,11 @@ title: Understanding Node.js File System basic ops for beginners.
 date: "2020-02-27T23:46:37.121Z"
 author: 'Sarah Williams'
 image: ./js-file-system.jpeg
+tags:
+  - javascript
+  - node-js
+  - file-system
+  - beginners
 ---
 
 ![Javascript Promises](./js-file-system.jpeg)

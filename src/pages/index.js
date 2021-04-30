@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby";
 import Img from 'gatsby-image';
+import { Badge } from 'reactstrap';
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -38,7 +39,7 @@ const BlogIndex = ({ data, location }) => {
               itemType="http://schema.org/Article"
               key={post.fields.slug}
             >
-              <header class="index-story-summary">
+              <header className="index-story-summary">
                 {/* <div class="category">Category</div> */}
                 <h1>
                   <Link to={post.fields.slug} itemProp="url">
@@ -52,7 +53,14 @@ const BlogIndex = ({ data, location }) => {
                   }}
                   itemProp="description"
                 />
-                <div class="published"><time>{post.frontmatter.date}</time></div>
+                <div className="published"><time>{post.frontmatter.date}</time></div>
+
+                <div className="post-tags">
+                  {post.frontmatter.tags.map(tag => (
+                    <div className="tag">{tag}</div>
+                  ))}
+                </div>
+
               </header>
               <section>
                 <Img fluid={post.frontmatter.image.childImageSharp.fluid} alt="Post Image" />
@@ -85,6 +93,7 @@ export const pageQuery = graphql`
           title
           description
           author
+          tags
           image {
             childImageSharp {
               fluid(maxWidth: 1600) {

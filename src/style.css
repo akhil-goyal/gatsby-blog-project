@@ -456,6 +456,25 @@ button {
 .published + .published {
   margin-top: 0;
 }
+
+.post-tags {
+  margin-top: var(--txt-vrt);
+  display: flex;
+}
+
+.post-tags > *{
+  margin: 0em 1em;
+}
+
+.tag {
+  background-color: rgb(12, 12, 75);
+  color: #fff;
+  padding: 1em 2em;
+  font-size: 0.7em;
+  border-radius: 2em;
+  cursor: pointer;
+}
+
 .category {
   /* background-color: var(--col-a); */
   display: inline-block;

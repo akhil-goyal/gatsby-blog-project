@@ -3,6 +3,10 @@ title: Understanding JavaScript Promises for absolute beginners.
 date: "2019-06-13T22:12:03.284Z"
 author: 'Robert Green'
 image: ./js-promises.jpeg
+tags:
+  - javascript
+  - promises
+  - beginners
 ---
 
 ![Javascript Promises](./js-promises.jpeg)
