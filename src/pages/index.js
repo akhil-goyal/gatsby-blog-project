@@ -1,5 +1,6 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { Link, graphql } from "gatsby";
+import Img from 'gatsby-image';
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -30,7 +31,6 @@ const BlogIndex = ({ data, location }) => {
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
-
           return (
             <article
               className="index-story"
@@ -39,7 +39,7 @@ const BlogIndex = ({ data, location }) => {
               key={post.fields.slug}
             >
               <header class="index-story-summary">
-                <div class="category">Category</div>
+                {/* <div class="category">Category</div> */}
                 <h1>
                   <Link to={post.fields.slug} itemProp="url">
                     <span itemProp="headline">{title}</span>
@@ -54,7 +54,7 @@ const BlogIndex = ({ data, location }) => {
                 <div class="published"><time>{post.frontmatter.date}</time></div>
               </header>
               <section>
-                <img src="https://images.unsplash.com/photo-1560472962-4388d184d933?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="" />
+                <Img fluid={post.frontmatter.image.childImageSharp.fluid} alt="Post Image" />
               </section>
             </article>
           )
@@ -83,6 +83,13 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1600) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

@@ -1,6 +1,8 @@
 ---
 title: Understanding Node.js File System basic ops for beginners.
 date: "2020-02-27T23:46:37.121Z"
+author: 'Akhil Goyal'
+image: ./js-file-system.jpeg
 ---
 
 ![Javascript Promises](./js-file-system.jpeg)

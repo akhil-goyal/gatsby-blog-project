@@ -1,7 +1,8 @@
 ---
 title: Understanding JavaScript Promises for absolute beginners.
 date: "2019-06-13T22:12:03.284Z"
-description: "Hello World"
+author: 'Akhil Goyal'
+image: ./js-promises.jpeg
 ---
 
 ![Javascript Promises](./js-promises.jpeg)

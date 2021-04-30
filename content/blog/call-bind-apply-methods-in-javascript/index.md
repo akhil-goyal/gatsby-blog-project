@@ -1,6 +1,8 @@
 ---
 title: Understanding call(), bind() & apply() methods in JavaScript in simplest way!
 date: "2021-01-12T23:46:37.121Z"
+author: 'Akhil Goyal'
+image: ./js-methods.jpeg
 ---
 
 ![Javascript Promises](./js-methods.jpeg)
