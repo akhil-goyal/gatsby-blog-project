@@ -6,26 +6,13 @@ const Layout = ({ location, title, children }) => {
   const isRootPath = location.pathname === rootPath
   let header = (
     <>
-      <div class="logo">TopCoded</div>
+      <Link to="/">
+        <div class="logo">TopCoded</div>
+      </Link>
+
       <p>Through a beginner's perspective.</p>
     </>
   )
-
-  /*
-  if (isRootPath) {
-    header = (
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
-    )
-  }
-  */
 
   return (
     <div data-is-root-path={isRootPath}>

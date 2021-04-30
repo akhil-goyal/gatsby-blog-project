@@ -1,7 +1,7 @@
 ---
 title: Understanding JavaScript Promises for absolute beginners.
 date: "2019-06-13T22:12:03.284Z"
-author: 'Akhil Goyal'
+author: 'Robert Green'
 image: ./js-promises.jpeg
 ---
 

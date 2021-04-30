@@ -45,6 +45,7 @@ const BlogIndex = ({ data, location }) => {
                     <span itemProp="headline">{title}</span>
                   </Link>
                 </h1>
+                <p>Written by : {post.frontmatter.author}</p>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: post.frontmatter.description || post.excerpt,
@@ -83,6 +84,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          author
           image {
             childImageSharp {
               fluid(maxWidth: 1600) {

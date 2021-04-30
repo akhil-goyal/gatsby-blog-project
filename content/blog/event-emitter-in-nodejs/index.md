@@ -1,7 +1,7 @@
 ---
 title: Using Event Emitter in Node.js for event driven programming (For beginners)..
 date: "2020-07-07T23:46:37.121Z"
-author: 'Akhil Goyal'
+author: 'John Doe'
 image: ./js-event-emitter.jpeg
 ---
 
