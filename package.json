@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "badge-maker": "^3.3.0",
     "gatsby": "^3.3.1",
     "gatsby-image": "^3.4.0",
     "gatsby-plugin-feed": "^3.2.0",
@@ -26,14 +27,17 @@
     "gatsby-source-filesystem": "^3.2.0",
     "gatsby-transformer-remark": "^3.2.0",
     "gatsby-transformer-sharp": "^3.2.0",
+    "lighthouse": "^7.4.0",
     "prismjs": "^1.23.0",
+    "puppeteer": "^9.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-share": "^4.4.0",
     "reactstrap": "^8.9.0",
     "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75"
+    "typeface-montserrat": "0.0.75",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "prettier": "2.2.1"
@@ -50,7 +54,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "node analytics; gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

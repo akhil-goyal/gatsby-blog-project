@@ -8,6 +8,13 @@
 
 ![W3C](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2F607f13553aaa9100ed5b539f--lucid-torvalds-f1e00e.netlify.app%2F%23%2F)
 
+## Lighthouse 
+
+![Accessibility](static/accessibility.svg)
+![Best Practices](static/best-practices.svg)
+![Performance](static/performance.svg)
+![SEO](static/seo.svg)
+
 ## Project Overview
 
 This project is a part of course WDDM - 121/122 for program Web Designing & Development at Humber College. The purpose of this project is to be familiar with one of the latest front-end framework 'Gatsby' so as to understand its usability, features & value that it brings to the table. A blog application, named TopCoded has been built using that that showcases a few technical articles on the landing page, which on click, open into full page article.
