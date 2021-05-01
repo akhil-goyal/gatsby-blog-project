@@ -1,7 +1,6 @@
-import * as React from "react"
+import React, { useState } from "react"
 import { Link, graphql } from "gatsby";
 import Img from 'gatsby-image';
-
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -11,6 +10,25 @@ const BlogIndex = ({ data, location }) => {
 
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
+
+  const [search, setSearch] = useState({
+    query: ``,
+    filteredPosts: posts
+  });
+
+  const handleSearch = (event) => {
+
+    const queryStr = event.target.value
+    const postsAr = posts.filter(post =>
+      post.frontmatter.title.toLowerCase().includes(queryStr.toLowerCase())
+    )
+
+    setSearch({
+      query: queryStr,
+      filteredPosts: postsAr
+    })
+
+  }
 
   if (posts.length === 0) {
     return (
@@ -30,8 +48,16 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       {/* <Bio /> */}
+      <div className="search-bar">
+        <input
+          type="search"
+          placeholder="Search by title"
+          onChange={handleSearch}
+          value={search.query} />
+      </div>
+
       <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
+        {search.filteredPosts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
           return (
             <article
@@ -41,7 +67,9 @@ const BlogIndex = ({ data, location }) => {
               key={post.fields.slug}
             >
               <section>
-                <Img fluid={post.frontmatter.image.childImageSharp.fluid} alt="Post Image" />
+                <Link to={post.fields.slug}>
+                  <Img fluid={post.frontmatter.image.childImageSharp.fluid} alt="Post Image" />
+                </Link>
               </section>
 
               <header className="index-story-summary">
