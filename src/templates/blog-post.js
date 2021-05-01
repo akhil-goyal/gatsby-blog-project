@@ -9,7 +9,6 @@ import {
   WhatsappIcon,
 } from 'react-share'
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
