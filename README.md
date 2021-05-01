@@ -27,6 +27,13 @@ This project is a part of course WDDM - 121/122 for program Web Designing & Deve
 * Search functionality
 * Social sharing
 
+## References
+
+1. Material discussed & learnt in the class.
+> https://github.com/juneate/juneate-blog
+2. Social Sharing for blog posts.
+> https://www.codewithlinda.com/blog/social-share-buttons-with-react-share/
+
 ## Installation
 
 To install this project locally, run -
