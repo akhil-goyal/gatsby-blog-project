@@ -1,5 +1,13 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+} from 'react-share'
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -9,6 +17,9 @@ const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
+
+  const url = location.href;
+  const twitterHandle = "akhilgoyal_";
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -34,6 +45,7 @@ const BlogPostTemplate = ({ data, location }) => {
           {/* <Bio /> */}
         </footer>
       </article>
+      <ShareButtons title={siteTitle} url={url} twitterHandle={twitterHandle} />
       <nav className="blog-post-nav">
         <ul
           style={{
@@ -62,6 +74,28 @@ const BlogPostTemplate = ({ data, location }) => {
       </nav>
     </Layout>
   )
+}
+
+const ShareButtons = ({ title, url, twitterHandle, tags }) => {
+
+  return (
+    <div className="share-buttons">
+      <p>Share with your friends</p>
+
+      <FacebookShareButton url={url} >
+        <FacebookIcon size={40} round={true} />
+      </FacebookShareButton>
+
+      <TwitterShareButton url={url} title={title} via={twitterHandle} hashtags={tags}>
+        <TwitterIcon size={40} round={true} />
+      </TwitterShareButton>
+
+      <WhatsappShareButton url={url} title={title}>
+        <WhatsappIcon size={40} round={true} />
+      </WhatsappShareButton>
+    </div>
+  )
+
 }
 
 export default BlogPostTemplate

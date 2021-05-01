@@ -408,6 +408,7 @@ button {
   flex-direction: column;
   text-align: center;
   align-items: center;
+  padding: 1em 0em;
 }
 .site-footer {
   /*   background-color: var(--col-accent); */
@@ -437,6 +438,14 @@ button {
 .site-header p {
   color: #fff;
   font: 400 1em 'Lato', sans-serif;
+}
+
+.header-nav {
+  color: #fff;
+}
+
+.header-nav > a {
+  margin: 0em 1em;
 }
 
 .container {
