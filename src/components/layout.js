@@ -8,7 +8,7 @@ const Layout = ({ location, title, children }) => {
   let header = (
     <>
       <Link to="/">
-        <div class="logo">TopCoded</div>
+        <div className="logo">TopCoded</div>
       </Link>
 
       <p>Through a beginner's perspective.</p>

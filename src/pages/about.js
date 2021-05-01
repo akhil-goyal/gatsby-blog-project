@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from "../components/layout";
 import Seo from "../components/seo"
 
-const siteLogo = "https://firebasestorage.googleapis.com/v0/b/web-dev-test-ed61b.appspot.com/o/images%2FVW4Ss1O3OEb7Vm4H1jGp.jpeg?alt=media&token=1d9037ce-3b87-4272-b74a-c7f0b608870d";
+const siteLogo = "https://firebasestorage.googleapis.com/v0/b/web-dev-test-ed61b.appspot.com/o/images%2F7iEaGkvF8XftqOKPyLEG.jpg?alt=media&token=806491ff-3f06-46b5-be7c-865e26a57950";
 
 const About = ({ location }) => {
 

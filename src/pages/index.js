@@ -2,31 +2,30 @@ import React, { useState } from "react"
 import { Link, graphql } from "gatsby";
 import Img from 'gatsby-image';
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
 
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteTitle = data.site.siteMetadata?.title || 'Topcoded'
   const posts = data.allMarkdownRemark.nodes
 
-  const [search, setSearch] = useState({
-    query: ``,
+  const [searchItem, setSearchItem] = useState({
+    query: '',
     filteredPosts: posts
   });
 
   const handleSearch = (event) => {
 
-    const queryStr = event.target.value
-    const postsAr = posts.filter(post =>
-      post.frontmatter.title.toLowerCase().includes(queryStr.toLowerCase())
+    const queryString = event.target.value
+    const postsArray = posts.filter(post =>
+      post.frontmatter.title.toLowerCase().includes(queryString.toLowerCase())
     )
 
-    setSearch({
-      query: queryStr,
-      filteredPosts: postsAr
-    })
+    setSearchItem({
+      query: queryString,
+      filteredPosts: postsArray
+    });
 
   }
 
@@ -34,7 +33,6 @@ const BlogIndex = ({ data, location }) => {
     return (
       <Layout location={location} title={siteTitle}>
         <Seo title="All posts" />
-        {/* <Bio /> */}
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -47,25 +45,28 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
-      {/* <Bio /> */}
       <div className="search-bar">
         <input
           type="search"
           placeholder="Search by title"
           onChange={handleSearch}
-          value={search.query} />
+          value={searchItem.query} />
       </div>
 
-      <ol style={{ listStyle: `none` }}>
-        {search.filteredPosts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
+      <ol style={{ listStyle: 'none' }}>
+
+        {searchItem.filteredPosts.map(post => {
+
+          const title = post.frontmatter.title || post.fields.slug;
+
           return (
+
             <article
               className="index-story"
               itemScope
               itemType="http://schema.org/Article"
-              key={post.fields.slug}
-            >
+              key={post.fields.slug}>
+
               <section>
                 <Link to={post.fields.slug}>
                   <Img fluid={post.frontmatter.image.childImageSharp.fluid} alt="Post Image" />
@@ -73,19 +74,22 @@ const BlogIndex = ({ data, location }) => {
               </section>
 
               <header className="index-story-summary">
-                {/* <div class="category">Category</div> */}
+
                 <h1>
                   <Link to={post.fields.slug} itemProp="url">
                     <span itemProp="headline">{title}</span>
                   </Link>
                 </h1>
+
                 <p>Written by : {post.frontmatter.author}</p>
+
                 <p
                   dangerouslySetInnerHTML={{
                     __html: post.frontmatter.description || post.excerpt,
                   }}
                   itemProp="description"
                 />
+
                 <div className="published"><time>{post.frontmatter.date}</time></div>
 
                 <div className="post-tags">
