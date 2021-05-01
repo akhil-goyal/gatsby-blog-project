@@ -10,3 +10,33 @@
 
 ## Project Overview
 
+This project is a part of course WDDM - 121/122 for program Web Designing & Development at Humber College. The purpose of this project is to be familiar with one of the latest front-end framework 'Gatsby' so as to understand its usability, features & value that it brings to the table. A blog application, named TopCoded has been built using that that showcases a few technical articles on the landing page, which on click, open into full page article.
+
+### Features
+
+* Routing
+* Post Author
+* Article Tags
+* Search functionality
+* Social sharing
+
+## Installation
+
+To install this project locally, run -
+
+1. Install the project dependencies
+   ```shell
+   npm install
+   ```
+
+2. Run the application
+    ```shell
+    gatsby develop
+    ```
+
+## Live Testing
+
+The project can be tested live by visiting at :
+
+https://topcoded.netlify.app/
+
